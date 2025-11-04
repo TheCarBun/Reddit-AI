@@ -1,6 +1,8 @@
+# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Star.png" alt="Star" width="25" height="25" /> **Deployed Vercel App:** [reddit-ai-one.vercel.app](https://reddit-ai-one.vercel.app) <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Left.png" alt="Backhand Index Pointing Left" width="25" height="25" />
+
 # RedditAI
 
-🎃 **RedditAI** is a Streamlit web app that leverages Google Gemini and the Reddit API to fetch Reddit post comments and generate AI-powered summaries or insights. It is designed for easy exploration and summarization of Reddit discussions.
+**RedditAI** is a ***prototype*** Streamlit web app that leverages Google Gemini and the Reddit API to fetch Reddit post comments and generate AI-powered summaries or insights. It is designed for easy exploration and summarization of Reddit discussions.
 
 ## Features
 
