@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 # from agno.agent import Agent
 # from agno.models.google import Gemini
 # from reddit import get_post_comments
@@ -41,6 +42,23 @@ import streamlit as st
 
 # GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
+def send_alert():
+    webhook_url = st.secrets["WEBHOOK_URL"]
+    payload = {
+                "username": "Reddit AI",
+                "embeds": [
+                    {
+                    "title": "Redirect Successful",
+                    "description": "User was successfully redirected to RedditAI v2.0",
+                    "color": 65328
+                    }
+                ]
+            }
+    res = requests.post(webhook_url, json=payload)
+    if res.status_code == 204:
+        print("Alert sent successfully")
+    else:
+        print("Failed to send alert")
 
 def main():
     # model = Gemini(
@@ -71,7 +89,9 @@ def main():
         "Reddit Post URL", placeholder="https://www.reddit.com/r/...", disabled=True)
     button = st.button("Summarize", disabled=True)
 
-    st.button(label="👉 RedditAI v2.0", type="primary", use_container_width=True, on_click=lambda: st.page_link("https://reddit-ai-one.vercel.app/"), help="Click here to check out the new version")
+    if st.button("Redirect me to new version"):
+        st.link_button(label="👉 RedditAI v2.0", url="https://reddit-ai-one.vercel.app/", type="primary", use_container_width=True, help="Click here to check out the new version")
+        send_alert()
 
     # if prompt and button:
         # with st.spinner("Fetching comments and summarizing post..."):
